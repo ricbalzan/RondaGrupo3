@@ -46,9 +46,13 @@ public class Ronda implements Serializable {
 	private List<Pessoa> vigilantes;
 	private static final long serialVersionUID = 1L;
 
-	public Ronda() {
+	public Ronda(Integer integer, String string, String string2, String string3, String string4, String string5) {
 		super();
 	}   
+	
+	public Ronda() {
+		super();
+	}
 	
 	public Ronda(Integer id) {
 		super();

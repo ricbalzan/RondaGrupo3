@@ -5,8 +5,8 @@
 		<class>br.upf.ads.paoo.proj01.domain.Pessoa</class>
 		<class>br.upf.ads.paoo.proj01.domain.Locomocao</class>
 		<class>br.upf.ads.paoo.proj01.domain.Localizacao</class>
-		<class>br.upf.ads.paoo.proj01.domain.Ronda</class>
 		<class>br.upf.ads.paoo.proj01.domain.Ocorrencia</class>
+		<class>br.upf.ads.paoo.proj01.domain.Ronda</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/paoocasca"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>

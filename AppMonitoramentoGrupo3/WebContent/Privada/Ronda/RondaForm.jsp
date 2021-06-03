@@ -9,7 +9,7 @@
 <body>
    <jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 
-	<form action="PessoaServlet" method="post">
+	<form action="RondaServlet" method="post">
 
 		<fieldset>
 			<legend>Dados da Ronda:</legend>
@@ -21,19 +21,20 @@
 				</div>
 			</div>
 			
-			<div class="row">
-				<div class="col-md-3">
+			
+			<div class="form-floating">
 					<label for="dataHoraInicio">Data/Hora Inicio:</label> 
-					<input type="datetime-local" name="nome" id="dataHoraInicio" value="${o.dataHoraInicio}" class="form-control" placeholder="dataHoraInicio">
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-3">
-					<label for="dataHoraFim">Data/Hora Fim:</label> 
-					<input type="datetime-local" name="dataHoraFim" id="dataHoraFim" value="${o.dataHoraFim}" class="form-control" placeholder="dataHoraFim">
-				</div>
-			</div>
+					<input type="datetime-local" class="form-control" id="dataHoraInicio" name="dataHoraInicio" 
+				   	pattern="YYYY-MM-DDThh:mm" 
+				  	value="<fmt:formatDate value="${o.dataHoraInicio}" pattern="yyyy-MM-dd"/ fmt:formatDate value="${o.dataHoraInicio}" pattern="HH:mm"/>
+			</div><br>
+			
+			<div class="form-floating">
+					<label for="dataHoraInicio">Data/Hora Fim:</label> 
+					<input type="datetime-local" class="form-control" id="dataHoraFim" name="dataHoraFim" 
+				   	pattern="YYYY-MM-DDThh:mm" 
+				  	value="<fmt:formatDate value="${o.dataHoraFim}" pattern="yyyy-MM-dd"/ fmt:formatDate value="${o.dataHoraFim}" pattern="HH:mm"/>
+			</div><br>
 			
 			<div class="row">
 				<div class="col-md-3">
@@ -41,20 +42,21 @@
 					<input type="text" name="latUltima" id="latUltima" value="${o.latUltima}" class="form-control" placeholder="lat Ultima">
 				</div>
 			</div>
-			
+			<br>
 			<div class="row">
 				<div class="col-md-3">
 					<label for="lonUltima">Longitude Ultima Ronda:</label> 
 					<input type="text" name="lonUltima" id="lonUltima" value="${o.lonUltima}" class="form-control" placeholder="lon Ultima">
 				</div>
 			</div>
+			<br>
+						<div class="form-floating">
+						<label for="dataHoraInicio">Data/Hora Ultima:</label> 
+					<input type="datetime-local" class="form-control" id="dataHoraUltima" name="dataHoraUltima" 
+				   	pattern="YYYY-MM-DDThh:mm" 
+				  	value="<fmt:formatDate value="${o.dataHoraUltima}" pattern="yyyy-MM-dd"/ fmt:formatDate value="${o.dataHoraUltima}" pattern="HH:mm"/>
+			</div><br>
 			
-				<div class="row">
-				<div class="col-md-3">
-					<label for="dataHoraUltima">Data/Hora Ultima Ronda:</label> 
-					<input type="datetime-local" name="dataHoraUltima" id="dataHoraUltima" value="${o.dataHoraUltima}" class="form-control" placeholder="dataHoraUltima">
-				</div>
-			</div>
 			
 			
 			<br>
