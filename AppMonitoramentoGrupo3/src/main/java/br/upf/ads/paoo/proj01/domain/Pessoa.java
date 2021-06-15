@@ -11,7 +11,8 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Pessoa implements Serializable{
-	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PessoaId")
 	@SequenceGenerator(name = "PessoaId", sequenceName = "PessoaId", allocationSize = 1)

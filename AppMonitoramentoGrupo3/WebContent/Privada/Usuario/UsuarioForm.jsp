@@ -4,15 +4,15 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Cadastro de Rondas</title>
+	<title>Cadastro de Usuario</title>
 </head>
 
 <body>
 	<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 	
-	<h3>Cadastro de Rondas</h3>
+	<h3>Cadastro de Usuario</h3>
 	
-	<form action="RondaServlet" method="post">
+	<form action="PessoaServlet" method="post">
 	
 		<fieldset>
 			<div class="form-floating">

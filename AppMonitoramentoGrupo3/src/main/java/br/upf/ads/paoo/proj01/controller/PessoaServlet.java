@@ -78,6 +78,7 @@ public class PessoaServlet extends HttpServlet {
 		request.getRequestDispatcher("PessoaForm.jsp").forward(request, response);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		EntityManager em = JpaUtil.getEntityManager();
 		List<Pessoa> lista = em.createQuery("from Pessoa").getResultList();
@@ -86,6 +87,7 @@ public class PessoaServlet extends HttpServlet {
 		request.getRequestDispatcher("PessoaList.jsp").forward(request, response);
 	}
 
+	@SuppressWarnings("unchecked")
 	private void gravar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Aqui introduzimos o código para persistir a pessoa no BD!
 		Pessoa o = inicializarObjeto(request); 
