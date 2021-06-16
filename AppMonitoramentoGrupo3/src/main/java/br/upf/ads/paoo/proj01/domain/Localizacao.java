@@ -1,6 +1,7 @@
 package br.upf.ads.paoo.proj01.domain;
 
 import java.io.Serializable;
+import java.lang.Float;
 import java.lang.Integer;
 import java.util.Date;
 
@@ -13,15 +14,15 @@ import javax.persistence.*;
 @Entity
 
 public class Localizacao implements Serializable {
-	private static final long serialVersionUID = 1L;
 
+	   
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "LocalizacaoId")
-	@SequenceGenerator(name = "LocalizacaoId", sequenceName = "LocalizacaoId", allocationSize = 1)	
+	@SequenceGenerator(name = "LocalizacaoId", sequenceName = "LocalizacaoId", allocationSize = 1)
 	private Integer id;
 	
-	@Column(nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(nullable = false)
 	private Date dataHora;
 	
 	@Column(nullable = false)
@@ -30,15 +31,20 @@ public class Localizacao implements Serializable {
 	@Column(nullable = false)
 	private Float lon;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne(optional =  false)
 	private Ronda ronda;
+	private static final long serialVersionUID = 1L;
 
 	public Localizacao() {
 		super();
-		// TODO Auto-generated constructor stub
+	}  
+		
+	public Localizacao(Integer id) {
+		super();
+		this.id = id;
 	}
 
-	public Localizacao(Integer id, Date dataHora, float lat, float lon, Ronda ronda) {
+	public Localizacao(Integer id, Date dataHora, Float lat, Float lon, Ronda ronda) {
 		super();
 		this.id = id;
 		this.dataHora = dataHora;
@@ -47,46 +53,42 @@ public class Localizacao implements Serializable {
 		this.ronda = ronda;
 	}
 
+
+
 	public Integer getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(Integer id) {
 		this.id = id;
-	}
-
+	}   
 	public Date getDataHora() {
-		return dataHora;
+		return this.dataHora;
 	}
 
 	public void setDataHora(Date dataHora) {
 		this.dataHora = dataHora;
+	}   
+	public Float getLat() {
+		return this.lat;
 	}
 
-	public float getLat() {
-		return lat;
-	}
-
-	public void setLat(float lat) {
+	public void setLat(Float lat) {
 		this.lat = lat;
+	}   
+	public Float getLon() {
+		return this.lon;
 	}
 
-	public float getLon() {
-		return lon;
-	}
-
-	public void setLon(float lon) {
+	public void setLon(Float lon) {
 		this.lon = lon;
-	}
-
+	}   
 	public Ronda getRonda() {
-		return ronda;
+		return this.ronda;
 	}
 
 	public void setRonda(Ronda ronda) {
 		this.ronda = ronda;
 	}
-	
-	
-	
+   
 }

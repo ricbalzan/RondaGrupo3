@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Cadastro de Pessoa</title>
+	<title>Cadastro de Ocorrencia</title>
 </head>
 
 <body>

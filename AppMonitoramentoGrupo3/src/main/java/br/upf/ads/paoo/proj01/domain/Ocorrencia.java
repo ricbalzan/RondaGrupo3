@@ -14,7 +14,6 @@ import javax.persistence.*;
  *
  */
 @Entity
-
 public class Ocorrencia implements Serializable {
 
 	   
@@ -27,7 +26,7 @@ public class Ocorrencia implements Serializable {
 	@Column(nullable = false)
 	private Date dataHora;
 	
-	@Column(length = 50, nullable = false)
+	@Column(length = 60, nullable = false)
 	private String titulo;
 	
 	@Column(length = 150, nullable = false)
@@ -39,24 +38,22 @@ public class Ocorrencia implements Serializable {
 	@Column(nullable = false)
 	private Float lon;
 	
-	@ManyToOne(optional = false)
-	private Ronda ronda;
-	
-	@Lob
 	private byte[] foto;
-
+	
+	@ManyToOne(optional =  false)
+	private Ronda ronda;
 	private static final long serialVersionUID = 1L;
 
 	public Ocorrencia() {
 		super();
-	}   
-
+	}  	
+	
 	public Ocorrencia(Integer id) {
 		super();
 		this.id = id;
 	}
 
-	public Ocorrencia(Integer id, Date dataHora, String titulo, String descricao, Float lat, Float lon,
+	public Ocorrencia(Integer id, Date dataHora, String titulo, String descricao, Float lat, Float lon, byte[] foto,
 			Ronda ronda) {
 		super();
 		this.id = id;
@@ -65,8 +62,12 @@ public class Ocorrencia implements Serializable {
 		this.descricao = descricao;
 		this.lat = lat;
 		this.lon = lon;
+		this.foto = foto;
 		this.ronda = ronda;
 	}
+
+
+
 	public Integer getId() {
 		return this.id;
 	}
@@ -109,15 +110,6 @@ public class Ocorrencia implements Serializable {
 	public void setLon(Float lon) {
 		this.lon = lon;
 	}   
-	
-	public Ronda getRonda() {
-		return this.ronda;
-	}
-
-	public void setRonda(Ronda ronda) {
-		this.ronda = ronda;
-	}
-
 	public byte[] getFoto() {
 		return foto;
 	}
@@ -131,5 +123,13 @@ public class Ocorrencia implements Serializable {
 			return new String(Base64.getEncoder().encode(foto));
 		else
 			return "";
-	}	
+	}	  
+	public Ronda getRonda() {
+		return this.ronda;
+	}
+
+	public void setRonda(Ronda ronda) {
+		this.ronda = ronda;
+	}
+   
 }

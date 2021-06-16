@@ -5,14 +5,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class JpaUtil {
-
+	
 	static EntityManagerFactory emf = null;
 	
 	public static EntityManager getEntityManager() {
 		if (emf == null) {
-			emf = Persistence.createEntityManagerFactory("Proj01");
+			emf = Persistence.createEntityManagerFactory("Monitora");
 		}
 		return emf.createEntityManager();
 	}
-	
+
 }

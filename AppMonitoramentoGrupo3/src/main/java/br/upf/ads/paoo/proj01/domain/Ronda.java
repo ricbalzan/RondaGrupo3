@@ -14,6 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 public class Ronda implements Serializable {
+
 	   
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "RondaId")
@@ -38,24 +39,26 @@ public class Ronda implements Serializable {
 	@Column(nullable = true)
 	private Date dataHoraUltima;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne
 	private Locomocao locomocao;
 	
 	@ManyToMany
 	private List<Pessoa> vigilantes;
-	
 	private static final long serialVersionUID = 1L;
 
-	public Ronda() {
+	public Ronda(Integer integer, String string, String string2, String string3, String string4, String string5) {
 		super();
 	}   
+	
+	public Ronda() {
+		super();
+	}
 	
 	public Ronda(Integer id) {
 		super();
 		this.id = id;
 	}
 
-	
 	public Ronda(Integer id, Date dataHoraInicio, Date dataHoraFim, Float latUltima, Float lonUltima,
 			Date dataHoraUltima, Locomocao locomocao, List<Pessoa> vigilantes) {
 		super();
@@ -68,6 +71,8 @@ public class Ronda implements Serializable {
 		this.locomocao = locomocao;
 		this.vigilantes = vigilantes;
 	}
+
+
 
 	public Integer getId() {
 		return this.id;

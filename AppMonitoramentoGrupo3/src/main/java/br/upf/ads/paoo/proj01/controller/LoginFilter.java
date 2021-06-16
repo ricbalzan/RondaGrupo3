@@ -17,15 +17,15 @@ import br.upf.ads.paoo.proj01.domain.Usuario;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(urlPatterns={"/Privada/*"})
+// @WebFilter(urlPatterns={"/Privada/*"})
 public class LoginFilter implements Filter {
 
-	/**
-	 * Default constructor.
-	 */
-	public LoginFilter() {
-		// TODO Auto-generated constructor stub
-	}
+    /**
+     * Default constructor. 
+     */
+    public LoginFilter() {
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see Filter#destroy()
@@ -37,20 +37,22 @@ public class LoginFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-			throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-		HttpServletRequest httpRequest = (HttpServletRequest) request;
-		HttpServletResponse httpResponse = (HttpServletResponse) response;
-		HttpSession sessao = httpRequest.getSession();
-		String contextPath = httpRequest.getContextPath();
-		Usuario usuarioLogado = (Usuario) sessao.getAttribute("usuarioLogado");
-		if (usuarioLogado == null) {
-			httpResponse.sendRedirect(contextPath + "/Login.jsp");
+
+		HttpServletRequest httpRequest = (HttpServletRequest) request; 
+		HttpServletResponse httpResponse = (HttpServletResponse) response; 
+		HttpSession sessao = httpRequest.getSession(); 
+		String contextPath = httpRequest.getContextPath(); 
+		Usuario usuarioLogado = (Usuario) sessao.getAttribute("usuarioLogado"); 
+		if (usuarioLogado == null){ 
+		    httpResponse.sendRedirect(contextPath + "/Login.jsp"); 
 		} else {
-			chain.doFilter(request, response);
-		}	
+  		   // pass the request along the filter chain
+		   chain.doFilter(request, response);
+		}
+		
 	}
 
 	/**
