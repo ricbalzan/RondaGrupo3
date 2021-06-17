@@ -15,7 +15,7 @@
 	
 		<h3>Listagem de Ocorrências</h3>
 		
-		<form action="LocomocaoServlet">
+		<form action="OcorrenciaServlet">
 			<button name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
 			<table class="table table-dark table-hover" border="1">
 				<thead>

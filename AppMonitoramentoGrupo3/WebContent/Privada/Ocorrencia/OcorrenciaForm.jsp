@@ -11,7 +11,7 @@
 	<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 	
 	
-	<form action="LocomocaoServlet" method="post">
+	<form action="OcorrenciaServlet" method="post">
 		<fieldset>
 			<div class="form-floating">
 				<input type="number" class="form-control" id="id" name="id" value="${o.id}" placeholder="Id" readonly="readonly">

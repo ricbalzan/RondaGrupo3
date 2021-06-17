@@ -77,7 +77,7 @@ public class LocomocaoServlet extends HttpServlet {
 		private void incluir(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			request.getRequestDispatcher("LocomocaoForm.jsp").forward(request, response);
 		}
-
+		@SuppressWarnings("unchecked")
 		private void listar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			EntityManager em = JpaUtil.getEntityManager();
 			List<Locomocao> lista = em.createQuery("from Locomocao").getResultList();
@@ -85,7 +85,8 @@ public class LocomocaoServlet extends HttpServlet {
 			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("LocomocaoList.jsp").forward(request, response);
 		}
-
+		
+		@SuppressWarnings("unchecked")
 		private void gravar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			Locomocao o = inicializarObjeto(request); 
 			EntityManager em = JpaUtil.getEntityManager();
