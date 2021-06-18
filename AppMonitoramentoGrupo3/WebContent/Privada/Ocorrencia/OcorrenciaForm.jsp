@@ -20,8 +20,8 @@
 			
 			<div class="form-floating">
 				<input type="datetime-local" class="form-control" id="dataHora" name="dataHora" 
-				 pattern="YYYY-MM-DDThh:mm" 
-				 value="<fmt:formatDate value="${o.dataHora}" pattern="yyyy-MM-dd"/>T<fmt:formatDate value="${o.dataHora}" pattern="HH:mm"/>" placeholder="Data e Hora">
+				 pattern="YYYY-MM-DDThh:mm"
+				 value="<fmt:formatDate value="${o.dataHora}" pattern="yyyy-MM-dd"/>T<fmt:formatDate value="${o.dataHora}" pattern="HH:mm"/>"/>
 			</div><br>
 			
 			<div class="form-floating">
@@ -39,6 +39,16 @@
 			
 			<div class="form-floating">
 				<input type="number" class="form-control" id="lon" name="lon" value="${o.lon}" placeholder="Longitude">
+			</div><br>	
+			
+			
+			<label for="ronda" class="form-floating">Ronda</label> 
+				<select class="form-control form-select" name="ronda" id="ronda">
+				   	<c:forEach items="${rondas}" var="r" varStatus="index">
+				       	<option value="${r.id}">${r.id} - ${r.locomocao.descricao} - <fmt:formatDate value="${r.dataHoraInicio}" pattern="dd/MM/yyyy HH:mm"/></option>
+				    </c:forEach>
+			  	</select>
+			
 			</div><br>	
 			
 			<br>						

@@ -55,9 +55,19 @@
 					<input type="datetime-local" class="form-control" id="dataHoraUltima" name="dataHoraUltima" 
 				   	pattern="YYYY-MM-DDThh:mm" 
 				  	value="<fmt:formatDate value="${o.dataHoraUltima}" pattern="yyyy-MM-dd"/ fmt:formatDate value="${o.dataHoraUltima}" pattern="HH:mm"/>
-			</div><br>
+			</div>
+			<br>
 			
 			
+						<div class="form-floating">
+						<label for="locomocao">Locomoção:</label> 
+					<input type="text" class="form-control form-select" id="locomocao" name="locomocao">
+				   	<c:forEach items="${locomocao}" var="l" varStatus="index">
+				       		<option value="${l.id}">${l.id} - ${l.descricao}</option>
+				    	</c:forEach>
+				    </select>
+				    
+			</div>
 			
 			<br>
 			<button type="submit" name="gravar">
