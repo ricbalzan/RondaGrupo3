@@ -11,35 +11,37 @@
 <body>
    <jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 
-<h3>LISTAGEM DE PESSOAS</h3>
+<div style="text-align:center"><h3>LISTAGEM DE PESSOAS</h3></div>
 
 <form action="PessoaServlet">
 
-    <button name="incluir"><i class="fas fa-plus"></i> Incluir</button> 
-	<table border="1" class="table table-hover table-condensed">
-	   <thead>
-	      <tr>
-		      <td>Id</td>
-		      <td>Nome</td>
-		      <td>Login App</td>
-		      <td></td>
-		      <td></td>	      
-	      </tr>
-	   </thead>
-	
-	   <c:forEach items="${lista}" var="o" varStatus="index"> 
-		   <tr>
-		      <td>${o.id}</td>
-		      <td>${o.nome}</td>
-		      <td>${o.loginApp}</td>
-		      <td><button name="alterar" value="${o.id}">Alterar</button></td>
-		      <td><button name="excluir" value="${o.id}">Excluir</button></td>
-		   </tr>
-	   </c:forEach>
-	</table>
-
-</form>
-
+		
+		
+		<div class="table-responsive">
+		<table class="table">
+		<thead class="table-dark">
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>LoginApp</th>
+					<th class="act" colspan="2">Ações</th>
+				</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${lista}" var="o" varStatus="index">
+				<tr>
+					<td>${o.id}</td>
+					<td>${o.nome}</td>
+					<td>${o.loginApp}</td>
+					<td><button class="action" name="alterar" value="${o.id}"><i class="fas fa-user-edit"></i></button></td>
+					<td><button class="action" name="excluir" value="${o.id}"><i class="fas fa-user-times"></i></button></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+		</table>
+		</div>
+				<button name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
+	</form>
 
 </body>
 </html>

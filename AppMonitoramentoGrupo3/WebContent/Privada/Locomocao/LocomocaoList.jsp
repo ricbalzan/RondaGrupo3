@@ -6,19 +6,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Lista de Locomoções</title>
+<title>LOCOMOÇÕES</title>
 </head>
 
 <body>
 	
 	<jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 	
-		<h3>Listagem de Locomoções</h3>
+		<div style="text-align:center"><h3>LISTAGEM DE LOCOMOÇÕES</h3></div>
 		
 		<form action="LocomocaoServlet">
-			<button name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
-			<table class="table table-dark table-hover" border="1">
-				<thead>
+			
+		<div class="table-responsive">
+		<table class="table">
+		<thead class="table-dark">
 				    <tr>
 				    	<th>Id</th>
 				    	<th>Descrição</th>
@@ -26,7 +27,7 @@
 				    	<th>Alterar</th>
 				    	<th>Excluir</th>
 				    </tr>
-				</thead>
+	
 				
 				<c:forEach items="${lista}" var="o" varStatus="index">
 				    <tbody>
@@ -40,6 +41,7 @@
 				    </tbody>
 			    </c:forEach>
 			</table>
+					<button name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
 	</form>	
 
 </body>

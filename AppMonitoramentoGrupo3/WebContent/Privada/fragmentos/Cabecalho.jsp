@@ -28,7 +28,7 @@
 </head>
 <body>
 
-	<h3>Aplicação da disciplina de Prog. de Aplicações OO</h3>
+	<div style="text-align:center"><h3>Aplicação da disciplina de Prog. de Aplicações Orientada a Objetos</h3></div>
 
 	<nav class="main-nav">
 		<!-- Sample menu definition -->
@@ -45,19 +45,19 @@
 					<li><a href="../Ocorrencia/OcorrenciaServlet">Ocorrencia</a>
 					
 					
-					<li><a href="#">Mais cadastros</a>
+					<li><a href="#"></a>
 						<ul>
-							<li><a href="../Cidade/CidadeServlet">Cidades</a></li>
+							<li><a href="../Cidade/CidadeServlet"></a></li>
 
 							<li><a
-								href="http://www.smartmenus.org/about/vadikom/privacy-policy/">Privacy
-									policy</a></li>
+								href="http://www.smartmenus.org/about/vadikom/privacy-policy/"></a></li>
 						</ul></li>
 				</ul></li>
 			<li><a href="../SairServlet">Sair</a></li>
 		</ul>
 	</nav>
-
+	<br>
+	<br>
 
 	<!-- jQuery -->
 	<script type="text/javascript"

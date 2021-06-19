@@ -11,13 +11,12 @@
 <body>
    <jsp:include page="../fragmentos/Cabecalho.jsp"></jsp:include>
 
-<h3>LISTAGEM DE RONDAS</h3>
+<div style="text-align:center"><h3>LISTAGEM DE RONDAS</h3></div>
 
 <form action="RondaServlet">
 
 
-		<button class="btn-incluir" name="incluir"><i class="fas fa-user-plus"></i><p>Incluir</p></button>
-		
+
 		<div class="table-responsive">
 		<table class="table">
 		<thead class="table-dark">
@@ -41,15 +40,16 @@
 					<td>${o.lonUltima}</td>
 					<td><fmt:formatDate value="${o.dataHoraUltima}" pattern="dd/MM/yyyy HH:mm"/></td>
 					<td>${o.locomocao.id} - ${o.locomocao.descricao}</td>
-					<td><button class="action" name="vigilantes" value="${o.id}"><i class="fas fa-user-edit"></i>Alterar</button></td>
-					<td><button class="action" name="alterar" value="${o.id}"><i class="fas fa-user-edit"></i> Editar</button></td>
-					<td><button class="action" name="excluir" value="${o.id}"><i class="fas fa-user-times"></i> Excluir</button></td>
+					<td><button class="action" name="vigilantes" value="${o.id}"><i class="fas fa-user-edit"></i></button></td>
+					<td><button name="alterar" value="${o.id}"> <i class="fas fa-pencil-alt"></i></button></td>
+					<td><button name="excluir" value="${o.id}"> <i class="fas fa-trash-alt"></i></button></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 		</table>
 		</div>
+			<button name="incluir"><i class="fas fa-plus-circle"></i> Incluir</button>
 	</form>
-
-</body>
+		
+	</body>
 </html>
